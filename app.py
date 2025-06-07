@@ -25,7 +25,7 @@ def receive_data():
 
     if device_id and lat and lon:
         try:
-            ref = db.reference(f'buses/{device_id}')
+            ref = db.reference(f'buses/{device_id}/location')
             ref.set({'lat': float(lat), 'lng': float(lon)})
             print(f"✅ Successfully wrote to Firebase: buses/{device_id}")
             return "Location updated", 200
